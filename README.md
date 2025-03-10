@@ -19,7 +19,14 @@ curl -X POST \
    -H "SOAPAction: \"\"" \
    --data @request.xml \
    http://localhost:9090/HelloSoapService
+   
+# request.xml contents are as follows:
 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:hel="http://www.flydubai.com/HelloSoap"><soapenv:Header/><soapenv:Body><hel:HelloSoap><ClientName>Test Client</ClientName></hel:HelloSoap></soapenv:Body>
+</soapenv:Envelope>   
+   
+   
 # RESPONSE
 
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header/><SOAP-ENV:Body><ns2:HelloSoapResponse xmlns:ns2="http://www.flydubai.com/HelloSoap">
